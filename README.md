@@ -1,6 +1,6 @@
 # ratelimiterdemo
-A demo project for rate limiter of standalone server
-Note: this rate limiter is only for demo purpose. And you need to implement a rate limiter with Redis for a cluster environment. 
+<p>A demo project for rate limiter of standalone server</p>
+<p>Note: this rate limiter is only for demo purpose. And you need to implement a rate limiter with Redis for a cluster environment. </p>
 
 ## How to run it
 Pre-requisite: OpenJDK 8, and JAVA_HOME had been set correctly
