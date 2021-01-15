@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.caixy.demo.ratelimiter.exception.InvalidDataException;
+import com.caixy.demo.ratelimiter.exception.TooManyRequestsException;
 import com.caixy.demo.ratelimiter.exception.UserNotFoundException;
 
 @RestController
@@ -32,5 +33,13 @@ public class RateLimiterExceptionController {
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("User id: ", userid);
         throw new InvalidDataException(Collections.unmodifiableMap(data));
+    }
+
+    @GetMapping("/order/tooManyRequests")
+    public void throwTooManyRequestsException(@RequestParam(name = "userid") String userid) {
+        logger.info("User with id " + userid + " has too many requests");
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("User id: ", userid);
+        throw new TooManyRequestsException(Collections.unmodifiableMap(data));
     }
 }

@@ -5,7 +5,8 @@ import org.springframework.http.HttpStatus;
 public enum ErrorCode {
     
     USER_NOT_FOUND(1001, HttpStatus.NOT_FOUND, "User can not be found"),
-    REQUEST_VALIDATION_FAILED(1002, HttpStatus.BAD_REQUEST, "Invalid data");
+    REQUEST_VALIDATION_FAILED(1002, HttpStatus.BAD_REQUEST, "Invalid data"),
+    TOO_MANY_REQUESTS(1003, HttpStatus.TOO_MANY_REQUESTS, "Too many requests");
 
     private final int code;
 

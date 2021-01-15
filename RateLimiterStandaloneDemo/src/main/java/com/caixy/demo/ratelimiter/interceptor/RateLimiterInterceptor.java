@@ -49,6 +49,9 @@ public class RateLimiterInterceptor extends HandlerInterceptorAdapter {
             return false;
         }
         boolean allowRequest = limiter.tryAcquire();
+        if (!allowRequest) {
+            request.getRequestDispatcher("/order/tooManyRequests").forward(request, response);
+        }
 
         return allowRequest;
     }
